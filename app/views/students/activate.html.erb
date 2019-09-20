@@ -1,0 +1,25 @@
+<!--
+<form action="/students/<%= @student.id %>/activate" method="POST">
+  <input type="radio" id=value_true value=true <%= 'checked' if @student.active %>>
+  <input type="radio" id=value_false value=false <%= 'checked' if !@student.active %>>
+
+  <input type="submit" value="submit">
+</form>
+-->
+<!--
+<%= form_with model: @student do |student_form| %>
+  <%= student_form.select(:student, :active, [['active', true], ['inactive', false]]) %>
+
+  <%= radio_button_tag(:active, true) %>
+  <%= label_tag(:active_true, "active") %>
+  <%= radio_button_tag(:active, false) %>
+  <%= label_tag(:active_true, "inactive") %>
+
+<% end %>
+-->
+<!--
+<div class="field">
+  <%= f.label "Toggle Active/Inactive" %>
+  <%= f.radio
+</div>
+-->
