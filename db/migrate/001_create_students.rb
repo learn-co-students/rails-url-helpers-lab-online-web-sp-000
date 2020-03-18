@@ -5,6 +5,8 @@ class CreateStudents < ActiveRecord::Migration
       t.string :last_name
 
       t.timestamps null: false
+
     end
+    add_column :students, :active, :boolean, :default => false
   end
 end
