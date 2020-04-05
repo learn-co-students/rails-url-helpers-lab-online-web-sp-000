@@ -11,8 +11,12 @@ class StudentsController < ApplicationController
   
   def activate
     @student = Student.find(params[:id])
-    @student.active == true
-    erb :show
+    if @student.active == true
+      Student.update(@student.id, active: false)
+    else
+      Student.update(@student.id, active: true)
+    end
+    redirect_to show
   end
 
   private

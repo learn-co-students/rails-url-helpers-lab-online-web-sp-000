@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   
   #get '/student/:id', to: 'students#show'
   
-  get '/student/:id/activate', to: 'students#activate'
+  get '/students/:id/activate', to: 'students#activate', as: 'activate_student'
   
 end
