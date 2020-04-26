@@ -3,7 +3,7 @@ class StudentsController < ApplicationController
 
   def active?
     # binding.pry
-    @student.active ? "active" : "inactive"
+    @student.active ? 'active' : 'inactive'
   end
 
   def index
