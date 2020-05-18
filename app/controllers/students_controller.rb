@@ -13,6 +13,10 @@ class StudentsController < ApplicationController
     end
   end
 
+  def activate
+    set_student 
+    redirect_to "/students/#{@student.id}"
+  end 
 
   private
 
