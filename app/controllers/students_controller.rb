@@ -6,7 +6,13 @@ class StudentsController < ApplicationController
   end
 
   def show
+    if @student.active 
+      !@student.toggle(:active).save
+    else  
+      @student.toggle(:active).save
+    end
   end
+
 
   private
 
