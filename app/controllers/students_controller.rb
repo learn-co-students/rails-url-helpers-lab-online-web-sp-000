@@ -8,6 +8,12 @@ class StudentsController < ApplicationController
   def show
   end
 
+  def active
+    student = set_student
+    student.toggle_active!
+    redirect_to "/students/#{student.id}"
+  end 
+
   private
 
     def set_student
