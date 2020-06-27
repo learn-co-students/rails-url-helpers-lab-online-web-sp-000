@@ -16,7 +16,8 @@ class StudentsController < ApplicationController
     else
       @student.active = true
     end
-    redirect 'students/#{@student.id}'
+    @student.save
+    redirect_to student_url(@student)
   end
 
   private
