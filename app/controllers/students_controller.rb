@@ -5,8 +5,18 @@ class StudentsController < ApplicationController
     @students = Student.all
   end
 
+def activate
+@student=Student.find_by_id(params[:id])
+@student.change_status
+@student.active
+redirect_to student_path(@student.id)
+end
+
   def show
   end
+
+  
+  
 
   private
 
