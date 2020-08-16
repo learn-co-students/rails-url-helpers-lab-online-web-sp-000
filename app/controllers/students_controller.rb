@@ -10,7 +10,6 @@ class StudentsController < ApplicationController
 
   def activate
     @student.active_switch
-    @student.save
     redirect_to student_path
   end
 
