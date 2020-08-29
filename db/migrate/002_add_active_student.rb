@@ -1,4 +1,4 @@
-class AddActiveStudent < ActiveRecord::Base[5.0]
+class AddActiveStudent < ActiveRecord::Migration
     def change 
         add_column :students, :active, :boolean, default: false
     end
