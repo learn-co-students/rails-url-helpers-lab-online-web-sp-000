@@ -6,6 +6,13 @@ class StudentsController < ApplicationController
   end
 
   def show
+      @student = Student.find(params[:id])
+      is_active = @student.active
+   if is_active
+        @message = "This student is currently active."
+      else
+        @message = "This student is currently inactive."
+      end
   end
 
   private
