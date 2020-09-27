@@ -8,11 +8,13 @@ class StudentsController < ApplicationController
 
   def show
     @student = Student.find(params[:id])
-    # if students_path(activate)
-      binding.pry
-    #   @student.activate = true
-    # end
+    
   end
+
+  def activate
+    @student.active = true
+  end
+    
 
   private
 
