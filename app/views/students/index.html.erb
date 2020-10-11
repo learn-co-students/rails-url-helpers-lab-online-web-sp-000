@@ -1,5 +1,16 @@
-<div>
-  <% @students.each do |student| %>
-    <div><%= student.first_name + " " + student.last_name %></div>
-  <% end %>
-</div>
+<%# <div> %>
+  <%# <% @students.each do |student| %> 
+    <%# <div><%= student.first_name + " " + student.last_name %>
+  <%# <% end %> 
+<%# </div> %>
+
+<%# iterate thru all @students %>
+<%# create "div" for each student %>
+<%# create clickable link %>
+<%# that will send to that specific student 'show' page %>
+
+<% @students.each do |s| %>
+    <div>
+        <%= link_to s.to_s, student_path(s) %>
+    </div>
+<% end %>
