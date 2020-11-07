@@ -6,6 +6,21 @@ class StudentsController < ApplicationController
   end
 
   def show
+    @status = "inactive"
+    if @student.active == true
+      @status = "active"
+    end
+  end
+
+  def activate
+    @student = Student.find(params[:id])
+    case @student.active
+    when true
+      @student.update(active: false)
+    when false
+      @student.update(active: true)
+    end
+    redirect_to student_path(@student)
   end
 
   private
