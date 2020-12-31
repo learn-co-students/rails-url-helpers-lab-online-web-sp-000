@@ -1,0 +1,17 @@
+<h1>Change Active Status</h1>
+
+
+    
+    <div><%= @student.active ? @student.update(active: false) : @student.update(active: true) %></div>
+
+    <form action="/students/<%= @student.id %>" method="post">
+        <input type="hidden" name="_method" value="patch">
+        <input type="submit" value="Change Status">
+    </form>
+
+    <%= link_to "Home", student_path(@student) %>
+    
+
+
+
+
