@@ -13,12 +13,11 @@ class StudentsController < ApplicationController
     if @student.active
       !!@student.active
       @student.save
-      redirect_to "/students/#{@student.id}"
     elsif @student.active
       !@student.active
       @student.save
-      redirect_to "/students/#{@student.id}"
     end 
+    redirect_to "/students/#{@student.id}"
   end 
 
   private
