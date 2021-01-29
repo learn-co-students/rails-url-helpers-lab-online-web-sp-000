@@ -8,6 +8,11 @@ class StudentsController < ApplicationController
   def show
   end
 
+  def activate
+    @student = Student.find(params[:id])
+    @student.toggle(:active)
+  end
+
   private
 
     def set_student
