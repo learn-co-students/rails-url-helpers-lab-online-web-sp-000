@@ -1,1 +1,6 @@
 <h1><%= @student.to_s %></h1>
+<% word = "inactive" %>
+<% if @student.active %>
+    <% word = "active" %>
+<% end %>
+<p>This student is currently <%= word %>.</p>
