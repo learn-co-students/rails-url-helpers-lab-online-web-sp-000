@@ -6,7 +6,11 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find(:id)
+    if @student.active == "false"
+      @student.activate_student
+    else
+      @student.deactivate_student
+    end
   end
   
   private
