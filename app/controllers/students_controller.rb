@@ -6,7 +6,6 @@ class StudentsController < ApplicationController
   end
   
   def create 
-    @student = Student.new
   end
 
   def show
@@ -18,12 +17,6 @@ class StudentsController < ApplicationController
     redirect_to student_path(@student)
   end 
 
-  def deactivate
-    set_student
-    deactivate_student
-    redirect_to student_path(@student)
-  end 
-  
   private
 
     def set_student
@@ -32,14 +25,14 @@ class StudentsController < ApplicationController
     
     def activate_student
       @student = Student.find(params[:id])
-      @student.active = true
+      @student.active = !@student.active
       @student.save
     end 
    
-    def deactivate_student
-      @student = Student.find(params[:id])
-      @student.active = false
-      @student.save
-    end 
+    # def deactivate_student
+    #   @student = Student.find(params[:id])
+    #   @student.active = false
+    #   @student.save
+    # end 
 
 end
