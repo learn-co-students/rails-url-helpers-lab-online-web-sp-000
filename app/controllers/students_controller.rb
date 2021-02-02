@@ -1,19 +1,25 @@
 class StudentsController < ApplicationController
-  before_action :set_student, except: :index
+  before_action :set_student, only: :show
   
   def index
     @students = Student.all
+  end
+  
+  def create 
+    @student = Student.new
   end
 
   def show
   end
   
-  def activate 
+  def activate
+    set_student
     activate_student
     redirect_to student_path(@student)
   end 
 
-  def deactivate 
+  def deactivate
+    set_student
     deactivate_student
     redirect_to student_path(@student)
   end 
