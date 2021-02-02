@@ -1,6 +1,7 @@
 <div>
   <%= @students.each do |student| %>
-        <div><%= student.first_name + " " + student.last_name %></div>
+        <div><%= @student.to_s %></div>
         <%link_to "profile", students_path(@student)%>
   <%end%>
 </div>
+

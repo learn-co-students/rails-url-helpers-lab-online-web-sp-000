@@ -4,4 +4,8 @@ Rails.application.routes.draw do
     member { get :activate}
     member { get :deactivate}
   end 
+  
+    get	'/students/:id/deactivate', to: 'students#deactivate'
+    get	'/students/:id/activate', to:	'students#activate'
+  
   end 
