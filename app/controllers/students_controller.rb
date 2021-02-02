@@ -6,11 +6,6 @@ class StudentsController < ApplicationController
   end
 
   def show
-    if @student.active == "false"
-      @student.activate_student
-    else
-      @student.deactivate_student
-    end
   end
   
   private
