@@ -1,1 +1,13 @@
 <h1><%= @student.to_s %></h1>
+<p> This student is currently active.</p>
+
+<% if @student.active == true %>
+  <p>This student is currently active.</p>
+<% elsif @student.active == false %>
+  <p>This student is currently inactive.</p>
+<% end %>
+
+
+<%= button_to [:activate, @student] do %>
+  Activate <strong><%= @student.to_s %></strong>
+<% end %>
