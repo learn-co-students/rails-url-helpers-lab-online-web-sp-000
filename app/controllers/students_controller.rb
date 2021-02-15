@@ -11,13 +11,10 @@ class StudentsController < ApplicationController
   def activate
     set_student
 
-    if @student.active == false
-      @student.update(active: true)
-    elsif @student.active == true
-      @student.update(active: false)
-    end
+    @student.active = !@student.active
+    @student.save 
     
-    redirect_back fallback_location: { action: "show", id: @student.id }
+    redirect_to student_path(@student)
   end
 
   private
