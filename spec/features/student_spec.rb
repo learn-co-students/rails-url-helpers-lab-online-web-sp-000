@@ -58,8 +58,11 @@ describe 'Activate page' do
 
   it "Should mark an inactive student as active" do
     visit activate_student_path(@student)
+    # byebug
     @student.reload
+    # byebug
     expect(@student.active).to eq(true)
+    # byebug
   end
 
   it "Should mark an active student as inactive" do
