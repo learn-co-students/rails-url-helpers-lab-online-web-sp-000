@@ -3,11 +3,22 @@ class StudentsController < ApplicationController
   
   def index
     @students = Student.all
+  
   end
 
   def show
   end
+  
+  def activate 
+ 
+      @studnet = Student.find_by(params[:id])
+      @student.active = !@student.active
+      @student.save 
+      
+     redirect_to student_path
 
+  end 
+  
   private
 
     def set_student
