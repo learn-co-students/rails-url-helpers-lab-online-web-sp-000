@@ -8,6 +8,11 @@ class StudentsController < ApplicationController
   def show
   end
 
+  def activate
+    set_student.toggle(:active).save
+    redirect_to set_student
+  end
+
   private
 
     def set_student
