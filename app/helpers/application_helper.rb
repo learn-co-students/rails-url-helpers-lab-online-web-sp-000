@@ -2,9 +2,9 @@ module ApplicationHelper
     def active?
         @student = set_student
         if @student.active == "true"
-          puts "active"
+          "active"
         else
-          puts "inactive"
+          "inactive"
         end
       end
 end
