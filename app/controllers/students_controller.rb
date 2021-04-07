@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: :show
-  include ApplicationHelper
+  # include ApplicationHelper
   
   def index
     @students = Student.all
@@ -13,7 +13,8 @@ class StudentsController < ApplicationController
   def activate
     @student = set_student
     @student.toggle!(:active)
-    redirect to student_path(@student)
+    @student.save
+    redirect_to student_path(@student)
   end
 
   private
