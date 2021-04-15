@@ -6,6 +6,13 @@ class StudentsController < ApplicationController
   end
 
   def show
+    set_student
+  end
+
+  def activate
+    status = set_student.active
+    @student.update(active: !status)
+    redirect_to student_path(@student)
   end
 
   private
