@@ -8,6 +8,12 @@ class StudentsController < ApplicationController
   def show
   end
 
+  def activate
+    @student = Student.find(params[:id])
+    @student.active == false ? @student.update(active: true): @student.update(active: false)
+    redirect_to action: "show", id: @student
+  end
+
   private
 
     def set_student
